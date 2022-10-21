@@ -1,0 +1,32 @@
+div {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+div h1 {
+  color: green;
+  border-bottom: 1px solid blue;
+}
+div section {
+  display: flex;
+  margin: 1.5vw;
+  margin-top: 0;
+}
+div section article {
+  border: 1px solid green;
+}
+div section article p {
+  text-align: center;
+  padding: 1.5vw calc(1.5vw - 1px) 1.5vw calc(1.5vw - 1px);
+  font-size: 20px;
+}
+div section article:nth-of-type(even) p {
+  color: red;
+}
+div section article:nth-of-type(odd) p {
+  color: blue;
+  /* potevo evitare di nestare p per la seconda volta in questo caso ? */
+}
+
+/*# sourceMappingURL=style.css.map */

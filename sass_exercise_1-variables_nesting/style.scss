@@ -1,0 +1,42 @@
+$color-primary: red;
+$color-secondary: blue;
+$color-tertiary: green;
+$px-size: 1px;
+$vw-size: 1.5vw;
+
+div {
+    border: $px-size solid $color-primary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+        color: $color-tertiary;
+        border-bottom: $px-size solid $color-secondary;
+       
+    }
+    section {
+        display: flex;
+        margin: $vw-size;
+        margin-top: 0;
+        article {
+            border: $px-size solid $color-tertiary;
+            p {
+                text-align: center;
+                padding: $vw-size calc($vw-size - $px-size) $vw-size calc($vw-size - $px-size);
+                font-size: calc($px-size + 19px);
+            }
+            &:nth-of-type(even) {
+                p {
+                    color: $color-primary;
+                }
+            }
+            &:nth-of-type(odd) {
+                p {
+                    color: $color-secondary;
+            /* potevo evitare di nestare p per la seconda volta in questo caso ? */
+            }
+          }
+        }
+      }
+    }
+    
