@@ -1,0 +1,45 @@
+$color-primary: red;
+$color-secondary: blue;
+$color-tertiary: green;
+$px-size: 1px;
+$vw-size: 1.5vw;
+
+@mixin article-card($color, $border-color, $font-size: 1rem) {
+    color: $color;
+    border: $px-size solid $border-color;
+    font-size: $font-size;
+
+}
+div {
+  border: $px-size solid $color-primary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include article-card($color-primary, $color-tertiary,);
+  h1 {
+    color: $color-tertiary;
+    border-bottom: $px-size solid $color-secondary;
+  }
+  section {
+     display: flex;
+     margin: $vw-size;
+     margin-top: 0;
+    article {
+         @include article-card($color-primary, $color-tertiary);
+      p {
+        text-align: center;
+        padding: $vw-size calc($vw-size - $px-size) $vw-size
+          calc($vw-size - $px-size);
+        font-size: calc($px-size + 19px);
+      }
+      &:nth-of-type(odd) {
+          color: $color-secondary;
+      }
+    }
+        &:last-child article {
+            @include article-card($color-tertiary, $color-secondary, 24px);
+            width: calc($vw-size + 100vw - 90px);
+        }
+      }
+    }
+  

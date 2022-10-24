@@ -1,0 +1,39 @@
+div {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: red;
+  border: 1px solid green;
+  font-size: 1rem;
+}
+div h1 {
+  color: green;
+  border-bottom: 1px solid blue;
+}
+div section {
+  display: flex;
+  margin: 1.5vw;
+  margin-top: 0;
+}
+div section article {
+  color: red;
+  border: 1px solid green;
+  font-size: 1rem;
+}
+div section article p {
+  text-align: center;
+  padding: 1.5vw calc(1.5vw - 1px) 1.5vw calc(1.5vw - 1px);
+  font-size: 20px;
+}
+div section article:nth-of-type(odd) {
+  color: blue;
+}
+div section:last-child article {
+  color: green;
+  border: 1px solid blue;
+  font-size: 24px;
+  width: calc(101.5vw - 90px);
+}
+
+/*# sourceMappingURL=style.css.map */
