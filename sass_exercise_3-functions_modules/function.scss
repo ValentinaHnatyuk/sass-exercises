@@ -1,5 +1,4 @@
 @function convert($num) {
-    $remValue: ($num / 16) + rem; 
-    @return $remValue;
+    @return calc($num / 16) + rem; 
 }
 
