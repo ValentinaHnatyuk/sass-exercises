@@ -1,0 +1,17 @@
+/* Error: expected "+", "-", "*", "/", or ")".
+ *    ,
+ * 31 |           calc(f.convert(cs.$vw-size - cs.$px-size);
+ *    |                                                    ^
+ *    '
+ *   style.scss 31:52  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: expected "+", "-", "*", "/", or ")".\a    \2577 \a 31 \2502            calc(f.convert(cs.$vw-size - cs.$px-size);\a    \2502                                                     ^\a    \2575 \a   style.scss 31:52  root stylesheet';
+}
