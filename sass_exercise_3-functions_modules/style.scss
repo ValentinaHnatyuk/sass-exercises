@@ -10,7 +10,7 @@
 
 }
 div {
-  border: f.$px-size solid cs.$color-primary;
+  border: f.convert(1) solid cs.$color-primary;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,14 +21,14 @@ div {
   }
   section {
      display: flex;
-     margin: $vw-size;
+     margin: cs.$vw-size;
      margin-top: 0;
     article {
          @include article-card(cs.$color-primary, cs.$color-tertiary);
       p {
         text-align: center;
-        padding: cs.$vw-size calc(1.5 - 1) cs.$vw-size f.convert(calc(1.5 - 1));
-        font-size: f.convert(calc(1 + 19px));
+        padding: cs.$vw-size calc(1.5vw - 1px) cs.$vw-size f.convert(calc(1.5vw - 1px));
+        font-size: f.convert(calc(1px + 19px));
       }
       &:nth-of-type(odd) {
           color: cs.$color-secondary;
@@ -36,7 +36,7 @@ div {
     }
         &:last-child article {
             @include article-card(cs.$color-tertiary, cs.$color-secondary, 24px);
-            width: f.convert(calc(1.5 + 100vw - 90px));
+            width: f.convert(calc(1.5vs + 100vw - 90px));
         }
       }
     }
