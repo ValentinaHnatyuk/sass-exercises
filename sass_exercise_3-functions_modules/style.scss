@@ -21,13 +21,13 @@ div {
   }
   section {
      display: flex;
-     margin: cs.$vw-size;
+     margin: f.convert(1.5);
      margin-top: 0;
     article {
          @include article-card(cs.$color-primary, cs.$color-tertiary);
       p {
         text-align: center;
-        padding: cs.$vw-size calc(1.5vw - 1px) cs.$vw-size f.convert(calc(1.5vw - 1px));
+        padding: f.convert(1.5) f.convert(calc(1.5vw - 1px)) f.convert(1.5) f.convert(calc(1.5vw - 1px));
         font-size: f.convert(calc(1px + 19px));
       }
       &:nth-of-type(odd) {
