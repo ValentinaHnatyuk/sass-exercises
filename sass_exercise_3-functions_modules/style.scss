@@ -36,7 +36,7 @@ div {
     }
         &:last-child article {
             @include article-card(cs.$color-tertiary, cs.$color-secondary, 24px);
-            width: f.convert(calc(1.5vs + 100vw - 90px));
+            width: f.convert(calc(1.5vw + 100vw - 90px));
         }
       }
     }
