@@ -1,0 +1,81 @@
+@use "color-size.scss" as cs;
+@use "function.scss" as f;
+@use "sass:color";
+
+$f-size: 1rem, 2rem, 3rem;
+
+@mixin card($color, $border-color, $font-size: 1rem) {
+  color: $color;
+  border: f.convert(1) solid $border-color;
+  font-size: $font-size;
+  margin: f.convert(8) auto;
+}
+%text {
+  width: fit-content;
+  color: cs.$color-tertiary;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include card(cs.$color-primary, cs.$color-primary);
+  h1 {
+    @extend %text;
+    border-bottom: f.convert(1) solid cs.$color-secondary;
+  }
+  h2 {
+    @extend %text;
+    padding: f.convert(16);
+    border: 1 solid cs.$color-primary;
+  }
+  section {
+    display: flex;
+    margin: 0 f.convert(16);
+    article {
+      &.first-art,
+      &.third-art {
+        @include card(cs.$color-secondary, cs.$color-tertiary);
+      }
+      &.second-art,
+      &.fourth-art {
+        @include card(cs.$color-primary, cs.$color-tertiary);
+      }
+      &.fifth-art {
+        @include card(cs.$color-tertiary, cs.$color-secondary, f.convert(24));
+        margin-bottom: f.convert(16);
+        width: f.convert(1630);
+      }
+      p {
+        text-align: center;
+        padding: f.convert(8);
+        font-size: f.convert(22);
+      }
+    }
+    &:nth-of-type(2) {
+      gap: f.convert(16);
+      div {
+        width: f.convert(50);
+        height: f.convert(50);
+        align-items: flex-start;
+
+        @for $i from 1 to 20 {
+          &:nth-child(#{$i}) {
+            @if $i == 10 {
+              background-color: cs.$color-secondary;
+              color: cs.$color-primary;
+            } @else {
+              background-color: color.adjust(white, $lightness: - ($i * 5%));
+              color: color.adjust(black, $lightness: + ($i * 5%));
+            }
+          }
+        }
+        @each $v in $f-size {
+          &.fs-#{$v} {
+            font-size: $v;
+          }
+        }
+      }
+    }
+  }
+}
